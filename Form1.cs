@@ -55,6 +55,11 @@ namespace StudJournal
             this.bells = bells;
             drawDataGrid();
         }
+        private void delB_Click(object sender, EventArgs e)
+        {
+            delElement dle = new delElement(disciplines, this);
+            dle.Show();
+        }
 
         //tab2 buttons
         private void button4_Click(object sender, EventArgs e)
@@ -72,6 +77,11 @@ namespace StudJournal
         {
             editBells ebells = new editBells(bellsT2, this);
             ebells.Show();
+        }
+        private void delBT2_Click(object sender, EventArgs e)
+        {
+            delElement dle = new delElement(disciplines, this);
+            dle.Show();
         }
         //tab2 setters
         private void setDiscTab2(List<Discipline> disc)
@@ -195,7 +205,8 @@ namespace StudJournal
                 button2.Click += button2_Click;
                 button3.Click -= button6_Click;
                 button3.Click += button3_Click;
-
+                delB.Click -= delBT2_Click;
+                delB.Click += delB_Click;
             }
             else
             {
@@ -205,6 +216,8 @@ namespace StudJournal
                 button2.Click += button5_Click;
                 button3.Click -= button3_Click;
                 button3.Click += button6_Click;
+                delB.Click -= delB_Click;
+                delB.Click += delBT2_Click;
             }
         }
 
@@ -349,7 +362,7 @@ namespace StudJournal
                 {
                     ZipFile.ExtractToDirectory(zipPath, path);
                 }
-                catch(System.IO.IOException)
+                catch(IOException)
                 {
                     Directory.Delete(path + "\\MyStudJournal", true);
                     ZipFile.ExtractToDirectory(zipPath, path);
@@ -359,5 +372,7 @@ namespace StudJournal
             drawDataGrid();
             drawDataGridTab2();
         }
+
+        
     }
 }

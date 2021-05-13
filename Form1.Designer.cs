@@ -71,6 +71,7 @@ namespace StudJournal
             this.export = new System.Windows.Forms.Button();
             this.import = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.delB = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -371,7 +372,7 @@ namespace StudJournal
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(879, 227);
+            this.button1.Location = new System.Drawing.Point(879, 177);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 30);
             this.button1.TabIndex = 1;
@@ -381,7 +382,7 @@ namespace StudJournal
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(879, 263);
+            this.button2.Location = new System.Drawing.Point(879, 213);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 30);
             this.button2.TabIndex = 2;
@@ -439,12 +440,23 @@ namespace StudJournal
             this.label1.TabIndex = 7;
             this.label1.Text = "kirogagl";
             // 
+            // delB
+            // 
+            this.delB.Location = new System.Drawing.Point(879, 249);
+            this.delB.Name = "delB";
+            this.delB.Size = new System.Drawing.Size(136, 30);
+            this.delB.TabIndex = 8;
+            this.delB.Text = "Удалить";
+            this.delB.UseVisualStyleBackColor = true;
+            this.delB.Click += new System.EventHandler(this.delB_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1027, 355);
+            this.Controls.Add(this.delB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.import);
             this.Controls.Add(this.export);
@@ -493,6 +505,7 @@ namespace StudJournal
         private System.Windows.Forms.Button export;
         private System.Windows.Forms.Button import;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button delB;
     }
 }
 
